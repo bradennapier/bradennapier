@@ -1,6 +1,6 @@
 # Released projects
 
-All <!-- release_count starts -->3<!-- release_count ends --> of my released projects, ordered by the date of their most recent release.
+All <!-- release_count starts -->3<!-- release_count ends --> of my recently released projects, ordered by the date of their most recent release.
 
 <!-- recent_releases starts -->
 * **[eslint-plus-action](https://github.com/bradennapier/eslint-plus-action)**: [v3.4.1-beta.1](https://github.com/bradennapier/eslint-plus-action/releases/tag/v3.4.1-beta.1) - 2020-07-14
