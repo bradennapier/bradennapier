@@ -93,27 +93,6 @@ def fetch_releases(oauth_token):
         after_cursor = data["data"]["viewer"]["repositories"]["pageInfo"]["endCursor"]
     return releases
 
-
-def fetch_tils():
-    sql = "select title, url, created_utc from til order by created_utc desc limit 5"
-    return httpx.get(
-        "https://til.simonwillison.net/til.json",
-        params={"sql": sql, "_shape": "array",},
-    ).json()
-
-
-def fetch_blog_entries():
-    entries = feedparser.parse("https://simonwillison.net/atom/entries/")["entries"]
-    return [
-        {
-            "title": entry["title"],
-            "url": entry["link"].split("#")[0],
-            "published": entry["published"].split("T")[0],
-        }
-        for entry in entries
-    ]
-
-
 if __name__ == "__main__":
     readme = root / "README.md"
     project_releases = root / "releases.md"
@@ -146,24 +125,5 @@ if __name__ == "__main__":
         project_releases_content, "release_count", str(len(releases)), inline=True
     )
     project_releases.open("w").write(project_releases_content)
-
-    tils = fetch_tils()
-    tils_md = "\n".join(
-        [
-            "* [{title}]({url}) - {created_at}".format(
-                title=til["title"],
-                url=til["url"],
-                created_at=til["created_utc"].split("T")[0],
-            )
-            for til in tils
-        ]
-    )
-    rewritten = replace_chunk(rewritten, "tils", tils_md)
-
-    entries = fetch_blog_entries()[:5]
-    entries_md = "\n".join(
-        ["* [{title}]({url}) - {published}".format(**entry) for entry in entries]
-    )
-    rewritten = replace_chunk(rewritten, "blog", entries_md)
 
     readme.open("w").write(rewritten)
