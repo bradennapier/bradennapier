@@ -3,7 +3,7 @@
 All <!-- release_count starts -->4<!-- release_count ends --> of my recently released projects, ordered by the date of their most recent release.
 
 <!-- recent_releases starts -->
-* **[idex-sdk-js](https://github.com/idexio/idex-sdk-js)**: [v1.4.2-beta.11](https://github.com/idexio/idex-sdk-js/releases/tag/v1.4.2-beta.11) - 2020-08-26
+* **[idex-sdk-js](https://github.com/idexio/idex-sdk-js)**: [v1.4.2-beta.12](https://github.com/idexio/idex-sdk-js/releases/tag/v1.4.2-beta.12) - 2020-08-26
 <br>IDEX 2.0 SDK built with TypeScript, supporting both web and Node environments.
 * **[eslint-plus-action](https://github.com/bradennapier/eslint-plus-action)**: [v3.4.2](https://github.com/bradennapier/eslint-plus-action/releases/tag/v3.4.2) - 2020-08-12
 <br>ESLint via Github Actions on changed files with annotations & comments
